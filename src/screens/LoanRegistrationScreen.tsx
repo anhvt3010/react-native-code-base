@@ -4,7 +4,6 @@ import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
-import { createLoan } from '../services/loanProduct/loanProduct.service';
 
 // Định nghĩa kiểu cho các tham số của màn hình
 type RootStackParamList = {
@@ -29,7 +28,7 @@ const LoanRegistrationScreen: React.FC = () => {
 
     const handleRegister = async () => {
         try {
-            await createLoan(loanData);
+            // await createLoan(loanData);
             alert('Loan registered successfully!');
             navigation.navigate('Home'); // Quay lại màn hình chính
         } catch (error) {

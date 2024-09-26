@@ -1,6 +1,11 @@
-import { Loan, Location, ApiResponse } from './loanProduct.type';
 import axiosInstance from "../../../axiosConfig";
+import {LoanProductDetailResponse, LoanProductResponse} from "./loanProduct.type";
 
-export const getLoans = (): Promise<ApiResponse<Loan[]>> => axiosInstance.get('/loans');
-export const createLoan = (loanData: { amount: string; term: string }): Promise<ApiResponse<Loan>> => axiosInstance.post('/loans', loanData);
-export const getNearbyLocations = (): Promise<ApiResponse<Location[]>> => axiosInstance.get('/locations/nearby');
+export const getAll = ():
+    Promise<LoanProductResponse[]> => axiosInstance.get('/lp');
+
+export const getOne = (loanProductId:number):
+    Promise<LoanProductResponse> => axiosInstance.get('/lp/' + loanProductId);
+
+export const getLoanProductDetail = (loanProductId:number):
+    Promise<LoanProductDetailResponse> => axiosInstance.get('/lp/detail/' + loanProductId);
