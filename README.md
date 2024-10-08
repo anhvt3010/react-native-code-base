@@ -28,7 +28,7 @@ Trancent Loan Application là một ứng dụng React Native cho phép người
 - **/src**: Thư mục gốc chứa toàn bộ mã nguồn của ứng dụng.
     - **/components**: Chứa các component dùng chung trong ứng dụng.
         - **/common**: Chứa các component dùng chung như Button, Input, và CustomDialog.
-            - **Button.tsx**: Component nút dùng chung, có thể tái sử dụng trong nhiều màn hình.
+            - **CustomButton.tsx**: Component nút dùng chung, có thể tái sử dụng trong nhiều màn hình.
             - **Input.tsx**: Component nhập liệu dùng chung, có thể tái sử dụng trong nhiều màn hình.
             - **CustomDialog.tsx**: Component hộp thoại tùy chỉnh dùng chung, có thể hiển thị thông báo hoặc xác nhận.
     - **/screens**: Chứa các màn hình của ứng dụng.

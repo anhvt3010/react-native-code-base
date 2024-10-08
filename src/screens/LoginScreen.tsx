@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'reac
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getToken } from '../services/auth/auth.service';
-import {AuthenticationRequest} from "../services/auth/auth.type";
+import {AuthenticationRequest, AuthenticationResponse} from "../services/auth/auth.type";
 
 type RootStackParamList = {
     Home: undefined;
@@ -17,8 +17,8 @@ const LoginScreen: React.FC = () => {
     const handleLogin = async () => {
         const authRequest: AuthenticationRequest = { username, password };
         try {
-            const response = await getToken(authRequest);
-            const token = response.data.result.token;
+            const response : AuthenticationResponse = await getToken(authRequest);
+            const token = response.token;
             await AsyncStorage.setItem('token', token);
             alert(token);
             navigation.navigate('Home');
